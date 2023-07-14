@@ -1,0 +1,11 @@
+<nav>
+  <a class="navbar-title" href="{{ .Site.BaseURL }}">
+    {{ .Site.Title }}
+  </a>
+  {{ range .Site.Menus.main }}
+  {{ $text := print .Name | safeHTML }}
+  <a class="navbar-link" href="{{ .URL }}">
+    {{ $text }}
+  </a>
+  {{ end }}
+</nav>

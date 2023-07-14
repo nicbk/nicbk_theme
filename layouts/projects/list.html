@@ -1,0 +1,23 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <table>
+  {{ range .Pages }}
+    <tr>
+      <td valign="top" class="projects-table-desc">
+        <a href="{{ .RelPermalink }}">
+          {{ .Title }}
+        </a>
+        </br>
+        <p>{{ .Params.description }}</p>
+      </td>
+      <td valign="top" class="projects-table-img">
+        <a href="{{ .RelPermalink }}">
+          <img class="projects-img" src="{{ .RelPermalink }}logo.png" alt="Logo of {{ .Title }}">
+        </a>
+      </td>
+    </tr>
+  {{ end }}
+  </table>
+  <div class="index-margin"></div>
+  {{ .Content }}
+{{ end }}

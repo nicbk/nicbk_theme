@@ -1,0 +1,7 @@
+{{ define "main" }}
+  <h1 class="post-header-title">{{ .Title }}</h1>
+  {{ if isset .Params "publishdate" }}
+    <small><time class="post-header-date">{{ .Date.Format "Jan 2, 2006" }}</small></time>
+  {{ end }}
+  {{ .Content }}
+{{ end }}
